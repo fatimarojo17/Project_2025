@@ -29,18 +29,18 @@ class MainWindow(Ui_Form, qtw.QWidget):
         # Add mass, spring, damping controls
         self.massSpin = qtw.QDoubleSpinBox(self)
         self.massSpin.setRange(0.1, 100)
-        self.massSpin.setValue(10)
+        self.massSpin.setValue(10) # Example/arbitrary number, this can be changed
         self.springSpin = qtw.QDoubleSpinBox(self)
         self.springSpin.setRange(0.1, 100)
-        self.springSpin.setValue(10)
+        self.springSpin.setValue(10) # Example/arbitrary number, this can be changed
         self.dampSpin = qtw.QDoubleSpinBox(self)
         self.dampSpin.setRange(0.1, 100)
-        self.dampSpin.setValue(5)
+        self.dampSpin.setValue(5) # Example/arbitrary number, this can be changed
         self.horizontalLayout.addWidget(qtw.QLabel("Mass"))
         self.horizontalLayout.addWidget(self.massSpin)
-        self.horizontalLayout.addWidget(qtw.QLabel("Spring k"))
+        self.horizontalLayout.addWidget(qtw.QLabel("Spring Constant k"))
         self.horizontalLayout.addWidget(self.springSpin)
-        self.horizontalLayout.addWidget(qtw.QLabel("Damping c"))
+        self.horizontalLayout.addWidget(qtw.QLabel("Damping Coefficient c"))
         self.horizontalLayout.addWidget(self.dampSpin)
 
         # Add Simulate button
@@ -56,7 +56,7 @@ class MainWindow(Ui_Form, qtw.QWidget):
         self.FBL_C.buildScene()
         # Set initial valid link lengths
         self.nud_Link1Length.setValue(60.0)  # Example: 60 units for input link
-        self.nud_Link3Length.setValue(70.0)  # Example: 70 units for output link
+        self.nud_Link3Length.setValue(155.24)  # Example: 155.24 units for output link
 
         self.prevDashpotLength = self.FBL_C.FBL_M.DashPot.getLength()
         self.lblDashpotForce = qtw.QLabel("Dashpot F: 0.0 N")
